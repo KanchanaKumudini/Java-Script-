@@ -5,7 +5,7 @@ Java Script Security Best Practices
 This HTML code can be used by hacker for utilizing malicious data. This code can be used without validation or escaping.
 It will allow transferring of victim’s session ID to hacker’s site and therefore it can be misused as hackers gain access to it.
 
-
+![1](https://user-images.githubusercontent.com/50174329/80176066-13a16180-8615-11ea-942f-8434387b7b4c.PNG)
 
 2. Cross-Site Request Forgery (CSRF)
 This application will permit the user to send a state-changing request.
@@ -15,14 +15,3 @@ Thus, eve-dropper develops a request for enabling money transfer from a victim�
 
 3. Server-Side Javascript Injection (SSJI)
 
-var http = require('http');
-http.createServer(function (request, response) {
-  if (request.method === 'POST') {
-    var data = '';
-    request.addListener('data', function(chunk) { data += chunk; });
-    request.addListener('end', function() {
-      var bankData = eval("(" + data + ")");
-      bankQuery(bankData.balance);
-   });
-  }
-});
