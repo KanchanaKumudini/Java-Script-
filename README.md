@@ -21,4 +21,18 @@ cgi-bin
 This application will permit the user to send a state-changing request.
 Thus, eve-dropper develops a request for enabling money transfer from a victim’s account to that of eve-dropper’s.
 
+![1 2](https://user-images.githubusercontent.com/50174329/80175929-b1486100-8614-11ea-8e2e-bfeb789d9acd.PNG)
 
+3. Server-Side Javascript Injection (SSJI)
+
+var http = require('http');
+http.createServer(function (request, response) {
+  if (request.method === 'POST') {
+    var data = '';
+    request.addListener('data', function(chunk) { data += chunk; });
+    request.addListener('end', function() {
+      var bankData = eval("(" + data + ")");
+      bankQuery(bankData.balance);
+   });
+  }
+});
