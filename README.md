@@ -15,3 +15,4 @@ Thus, eve-dropper develops a request for enabling money transfer from a victimâ€
 
 3. Server-Side Javascript Injection (SSJI)
 
+![1 3](https://user-images.githubusercontent.com/50174329/80176123-392e6b00-8615-11ea-9645-6efe8e1f291a.PNG)
